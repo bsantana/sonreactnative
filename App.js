@@ -15,7 +15,7 @@ import {
 
 import PropsExample from './PropsExample'
 import Counter from './Counter'
-import { StackNavigator } from 'react-navigation'
+import { TabNavigator } from 'react-navigation'
 
 class App extends Component<{}> {
   static navigationOptions = {
@@ -54,12 +54,19 @@ class App extends Component<{}> {
   }
 }
 
-const StackApp = StackNavigator({
+const StackApp = TabNavigator({
   Home: {
     screen: App
   },
   Counter: {
     screen: Counter
+  }
+},
+{
+  tabBarPosition: 'top',
+  animationEnabled: true,
+  tabBarOptions: {
+    activeTintColor: 'black'
   }
 })
 
